@@ -55,8 +55,18 @@ jobs:
             
             # Deploy Backend
             echo "🔧 Deploying Backend..."
-            cd /opt/projects/lili-travel/backend
+            cd /opt/projects/lili-travel
             npm install --production
+            
+            # Create .env if not exists
+            if [ ! -f .env ]; then
+              cat > .env << 'EOFENV'
+NODE_ENV=production
+PORT=3100
+JWT_SECRET=lili-travel-production-secret-2026
+DATABASE_PATH=./lili_travel.db
+EOFENV
+            fi
             
             # Check if PM2 process exists
             if pm2 describe lili-backend > /dev/null 2>&1; then
@@ -69,9 +79,28 @@ jobs:
             
             # Deploy Frontend
             echo "🎨 Deploying Frontend..."
-            cd /opt/projects/lili-travel/frontend
-            npm install
+            cd /opt/projects/lili-travel
+            
+            # Build frontend
             npm run build
+            
+            # Create frontend server if not exists
+            if [ ! -f dist/server.js ]; then
+              cat > dist/server.js << 'EOFSERVER'
+const express = require('express');
+const path = require('path');
+const app = express();
+app.use(express.static(path.join(__dirname)));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+const PORT = process.env.PORT || 5173;
+app.listen(PORT, () => {
+  console.log(\`Frontend running on port \${PORT}\`);
+});
+EOFSERVER
+              cd dist && npm init -y && npm install express
+            fi
             
             # Check if PM2 process exists
             if pm2 describe lili-frontend > /dev/null 2>&1; then
@@ -79,6 +108,7 @@ jobs:
               pm2 restart lili-frontend
             else
               echo "🆕 Starting lili-frontend for the first time..."
+              cd dist
               pm2 start server.js --name lili-frontend
             fi
             
