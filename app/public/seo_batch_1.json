@@ -1,0 +1,233 @@
+[
+  {
+    "id": 1,
+    "language": "EN",
+    "country": "Peru",
+    "city_or_region": "Cusco",
+    "topic_cluster": "Itinerary",
+    "primary_keyword": "Cusco Machu Picchu Itinerary 7 Days",
+    "secondary_keywords": [
+      "Machu Picchu tickets",
+      "Sacred Valley tour",
+      "Cusco altitude sickness",
+      "Rainbow Mountain day trip",
+      "Peru travel budget"
+    ],
+    "slug": "cusco-machu-picchu-7-day-itinerary",
+    "meta_title": "The Perfect 7-Day Cusco & Machu Picchu Itinerary | Lili Travel",
+    "meta_description": "Plan your dream trip to Peru with this actionable 7-day Cusco & Machu Picchu itinerary. Includes altitude tips, Sacred Valley, and Rainbow Mountain.",
+    "h1": "7 Days in Cusco & Machu Picchu: The Ultimate Itinerary",
+    "outline": [
+      "Day 1: Arrival & Acclimatization in Cusco",
+      "Day 2: Exploring Cusco’s Historic Center",
+      "Day 3: The Sacred Valley (Pisac & Ollantaytambo)",
+      "Day 4: Machu Picchu – The Lost City",
+      "Day 5: Moray & Maras Salt Mines",
+      "Day 6: Rainbow Mountain Challenge",
+      "Day 7: Departure or Humantay Lake"
+    ],
+    "article_body": "## Welcome to the Heart of the Incas\n\nCusco isn't just a stopover; it's the beating heart of the Andes. At 3,400 meters (11,150 feet), the air is thin, but the energy is palpable. This 7-day itinerary is designed to help you acclimatize properly while hitting the absolute highlights of the region, including the Sacred Valley and, of course, Machu Picchu.\n\n### Lili’s Tip: Acclimatization is Key\n\n> \"Don't underestimate the altitude! I made the mistake of rushing up the stairs to San Cristobal viewpoint on my first day and was out of breath for an hour. Drink plenty of coca tea (mate de coca) immediately upon arrival, avoid heavy meals, and take it slow. Sorojchi Pills are available at any pharmacy if you need them.\"\n\n## Day 1: Arrival & Acclimatization\n\nFly into Alejandro Velasco Astete International Airport (CUZ). Take an Uber or official taxi to your accommodation in the San Blas or Plaza de Armas area (approx. 15-20 PEN). Spend the day resting. Walk slowly around the Plaza de Armas, visit the **12-Angled Stone**, and grab a light dinner of quinoa soup.\n\n## Day 2: Exploring Cusco’s Historic Center\n\nStart with coffee at a balcony cafe overlooking the plaza. Visit **Qorikancha** (Temple of the Sun) to see the clash of Inca and Spanish architecture. In the afternoon, head to **San Pedro Market** for fresh juice and to see local life. If you're feeling good, walk up to **Sacsayhuamán** for sunset views over the city.\n\n## Day 3: The Sacred Valley\n\nTake a colectivo or tour to the Sacred Valley. Start in **Pisac** for its massive ruins and artisan market. Then, head to **Ollantaytambo**, a living Inca village. The fortress here is spectacular. \n\n*Transport Tip:* Colectivos from Cusco to Pisac cost about 4-6 PEN and leave from Calle Puputi.\n\n## Day 4: Machu Picchu\n\nTake the early train (PeruRail or Inca Rail) from Ollantaytambo to Aguas Calientes. From there, take the bus up to the citadel. \n\n**Important:** You must book your Machu Picchu tickets weeks (or months) in advance. Circuit 1 or 2 offers the classic postcard view. Spend 3-4 hours exploring. Return to Cusco in the evening or stay in Ollantaytambo.\n\n{GETYOURGUIDE_LINK}\n\n## Day 5: Moray & Maras\n\nVisit the agricultural terraces of **Moray** and the stunning **Maras Salt Mines**. This is often done as a half-day tour (approx. 30-50 PEN). The contrast of the white salt pans against the brown mountains is a photographer's dream.\n\n## Day 6: Rainbow Mountain (Vinicunca)\n\nWarning: This is a high-altitude trek (5,200m). Only go if you are fully acclimatized. Tours leave at 4 AM. The hike is challenging but the colors are unreal. Rent a horse if you're struggling.\n\n## Day 7: Departure or Humantay Lake\n\nIf you have a late flight, squeeze in a hike to **Humantay Lake** (turquoise water at the base of a glacier). Otherwise, enjoy a final breakfast of chicharron before heading to the airport.\n\n## Next Steps\n\nReady to book? Check out our guide on **[Where to Stay in Cusco]** for the best hostels and boutique hotels, or read our **[Peru Budget Guide]** to save money on your trip.",
+    "faq": [
+      {
+        "question": "How many days do I need in Cusco?",
+        "answer": "We recommend at least 5-7 days to properly acclimatize and see the main sites without rushing."
+      },
+      {
+        "question": "Is Machu Picchu safe for solo female travelers?",
+        "answer": "Yes, Peru is generally very safe for solo travelers on the main tourist circuit. Standard precautions apply."
+      },
+      {
+        "question": "Do I need to book Machu Picchu tickets in advance?",
+        "answer": "Absolutely. Tickets sell out weeks in advance, especially for Huayna Picchu hikes."
+      },
+      {
+        "question": "What is the best time to visit Cusco?",
+        "answer": "The dry season (May to October) is best for trekking and clear views."
+      },
+      {
+        "question": "Can I use US Dollars in Cusco?",
+        "answer": "Yes, for big purchases like hotels and tours. For markets and taxis, you need Peruvian Soles (PEN)."
+      }
+    ],
+    "schema_org_jsonld": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How many days do I need in Cusco?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We recommend at least 5-7 days to properly acclimatize and see the main sites without rushing."
+          }
+        }
+      ]
+    },
+    "internal_links": [
+      "/peru/cusco-stays",
+      "/peru/budget-guide",
+      "/peru/sacred-valley-guide",
+      "/peru/rainbow-mountain-tips",
+      "/safety/altitude-sickness"
+    ],
+    "affiliate_slots": [
+      "{BOOKING_AFFILIATE_LINK}",
+      "{GETYOURGUIDE_LINK}",
+      "{VIATOR_LINK}"
+    ]
+  },
+  {
+    "id": 2,
+    "language": "FR",
+    "country": "Pérou",
+    "city_or_region": "Cusco",
+    "topic_cluster": "Itinerary",
+    "primary_keyword": "Itinéraire Cusco Machu Picchu 7 Jours",
+    "secondary_keywords": [
+      "Billets Machu Picchu",
+      "Vallée Sacrée tour",
+      "Mal des montagnes Cusco",
+      "Montagne Arc-en-ciel",
+      "Budget voyage Pérou"
+    ],
+    "slug": "itineraire-cusco-machu-picchu-7-jours",
+    "meta_title": "L'Itinéraire Parfait de 7 Jours à Cusco & Machu Picchu | Lili Travel",
+    "meta_description": "Planifiez votre voyage de rêve au Pérou avec cet itinéraire pratique de 7 jours. Conseils altitude, Vallée Sacrée et Montagne Arc-en-ciel inclus.",
+    "h1": "7 Jours à Cusco & Machu Picchu : L'Itinéraire Ultime",
+    "outline": [
+      "Jour 1 : Arrivée et Acclimatation à Cusco",
+      "Jour 2 : Exploration du Centre Historique",
+      "Jour 3 : La Vallée Sacrée (Pisac & Ollantaytambo)",
+      "Jour 4 : Machu Picchu – La Cité Perdue",
+      "Jour 5 : Moray & Salines de Maras",
+      "Jour 6 : Le Défi de la Montagne Arc-en-ciel",
+      "Jour 7 : Départ ou Lac Humantay"
+    ],
+    "article_body": "## Bienvenue au Cœur des Incas\n\nCusco n'est pas juste une étape ; c'est le cœur battant des Andes. À 3 400 mètres d'altitude, l'air est rare, mais l'énergie est palpable. Cet itinéraire de 7 jours est conçu pour vous aider à vous acclimater tout en visitant les incontournables de la région, y compris la Vallée Sacrée et, bien sûr, le Machu Picchu.\n\n### Le Conseil de Lili : L'Acclimatation est Clé\n\n> \"Ne sous-estimez pas l'altitude ! J'ai fait l'erreur de monter les escaliers vers le point de vue de San Cristobal le premier jour et j'ai été essoufflée pendant une heure. Buvez beaucoup de maté de coca dès votre arrivée, évitez les repas lourds et allez-y doucement. Les pilules Sorojchi sont disponibles en pharmacie si besoin.\"\n\n## Jour 1 : Arrivée & Acclimatation\n\nAtterrissez à l'aéroport Alejandro Velasco Astete (CUZ). Prenez un Uber ou un taxi officiel vers votre hébergement à San Blas ou près de la Plaza de Armas (env. 15-20 PEN). Reposez-vous. Marchez doucement autour de la place, visitez la **Pierre aux 12 Angles**, et dînez léger (soupe de quinoa).\n\n## Jour 2 : Centre Historique\n\nCommencez par un café sur un balcon surplombant la place. Visitez le **Qorikancha** (Temple du Soleil). L'après-midi, direction le **Marché San Pedro** pour un jus frais. Si vous vous sentez bien, montez à **Sacsayhuamán** pour le coucher du soleil.\n\n## Jour 3 : La Vallée Sacrée\n\nPrenez un colectivo ou un tour vers la Vallée Sacrée. Commencez par **Pisac** pour ses ruines et son marché artisanal. Ensuite, direction **Ollantaytambo**, un village inca vivant. \n\n*Astuce Transport :* Les colectivos de Cusco à Pisac coûtent environ 4-6 PEN et partent de la Calle Puputi.\n\n## Jour 4 : Machu Picchu\n\nPrenez le train tôt (PeruRail ou Inca Rail) d'Ollantaytambo à Aguas Calientes. De là, bus jusqu'à la citadelle. \n\n**Important :** Réservez vos billets pour le Machu Picchu des semaines (voire des mois) à l'avance. Le Circuit 1 ou 2 offre la vue classique. Passez 3-4 heures à explorer.\n\n{GETYOURGUIDE_LINK}\n\n## Jour 5 : Moray & Maras\n\nVisitez les terrasses agricoles de **Moray** et les impressionnantes **Salines de Maras**. Souvent fait en demi-journée (env. 30-50 PEN).\n\n## Jour 6 : Montagne Arc-en-ciel (Vinicunca)\n\nAttention : Trek à haute altitude (5 200m). N'y allez que si vous êtes acclimaté. Les tours partent à 4h du matin. Louez un cheval si nécessaire.\n\n## Jour 7 : Départ ou Lac Humantay\n\nS'il vous reste du temps, faites la randonnée vers le **Lac Humantay**. Sinon, profitez d'un dernier petit-déjeuner avant l'aéroport.\n\n## Prochaines Étapes\n\nPrêt à réserver ? Consultez notre guide sur **[Où dormir à Cusco]** ou lisez notre **[Guide Budget Pérou]**.",
+    "faq": [
+      {
+        "question": "Combien de jours faut-il à Cusco ?",
+        "answer": "Nous recommandons au moins 5-7 jours pour s'acclimater et tout voir."
+      },
+      {
+        "question": "Le Machu Picchu est-il sûr pour les femmes seules ?",
+        "answer": "Oui, le Pérou est généralement très sûr sur le circuit touristique."
+      },
+      {
+        "question": "Dois-je réserver le Machu Picchu à l'avance ?",
+        "answer": "Absolument. Les billets partent très vite."
+      },
+      {
+        "question": "Quelle est la meilleure période pour visiter ?",
+        "answer": "La saison sèche (mai à octobre) est idéale."
+      },
+      {
+        "question": "Puis-je payer en dollars ?",
+        "answer": "Oui pour les hôtels et tours, mais il faut des Soles (PEN) pour le reste."
+      }
+    ],
+    "schema_org_jsonld": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Combien de jours faut-il à Cusco ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nous recommandons au moins 5-7 jours pour s'acclimater et tout voir."
+          }
+        }
+      ]
+    },
+    "internal_links": [
+      "/fr/peru/cusco-stays",
+      "/fr/peru/budget-guide",
+      "/fr/peru/sacred-valley-guide",
+      "/fr/peru/rainbow-mountain-tips",
+      "/fr/safety/altitude-sickness"
+    ],
+    "affiliate_slots": [
+      "{BOOKING_AFFILIATE_LINK}",
+      "{GETYOURGUIDE_LINK}",
+      "{VIATOR_LINK}"
+    ]
+  },
+  {
+    "id": 3,
+    "language": "ES",
+    "country": "Perú",
+    "city_or_region": "Cusco",
+    "topic_cluster": "Itinerary",
+    "primary_keyword": "Itinerario Cusco Machu Picchu 7 Días",
+    "secondary_keywords": [
+      "Entradas Machu Picchu",
+      "Tour Valle Sagrado",
+      "Mal de altura Cusco",
+      "Montaña de 7 Colores",
+      "Presupuesto viaje Perú"
+    ],
+    "slug": "itinerario-cusco-machu-picchu-7-dias",
+    "meta_title": "El Itinerario Perfecto de 7 Días en Cusco y Machu Picchu | Lili Travel",
+    "meta_description": "Planifica tu viaje soñado a Perú con este itinerario práctico de 7 días. Incluye consejos de altura, Valle Sagrado y Montaña de 7 Colores.",
+    "h1": "7 Días en Cusco y Machu Picchu: El Itinerario Definitivo",
+    "outline": [
+      "Día 1: Llegada y Aclimatación en Cusco",
+      "Día 2: Explorando el Centro Histórico",
+      "Día 3: El Valle Sagrado (Pisac y Ollantaytambo)",
+      "Día 4: Machu Picchu – La Ciudad Perdida",
+      "Día 5: Moray y Salineras de Maras",
+      "Día 6: Desafío de la Montaña de 7 Colores",
+      "Día 7: Despedida o Laguna Humantay"
+    ],
+    "article_body": "## Bienvenidos al Corazón de los Incas\n\nCusco no es solo una parada; es el corazón palpitante de los Andes. A 3.400 metros, el aire es ligero, pero la energía es palpable. Este itinerario de 7 días está diseñado para ayudarte a aclimatarte mientras visitas lo mejor de la región, incluyendo el Valle Sagrado y, por supuesto, Machu Picchu.\n\n### El Consejo de Lili: La Aclimatación es Clave\n\n> \"¡No subestimes la altura! Cometí el error de subir corriendo las escaleras hacia el mirador de San Cristóbal mi primer día y me quedé sin aliento por una hora. Bebe mucho mate de coca al llegar, evita comidas pesadas y tómatelo con calma. Las Sorojchi Pills están disponibles en cualquier farmacia si las necesitas.\"\n\n## Día 1: Llegada y Aclimatación\n\nVuela al Aeropuerto Alejandro Velasco Astete (CUZ). Toma un Uber o taxi oficial a tu alojamiento en San Blas o cerca de la Plaza de Armas (aprox. 15-20 PEN). Descansa. Camina despacio por la plaza, visita la **Piedra de los 12 Ángulos** y cena algo ligero como una sopa de quinua.\n\n## Día 2: Centro Histórico\n\nEmpieza con un café en un balcón con vista a la plaza. Visita el **Qorikancha** (Templo del Sol). Por la tarde, ve al **Mercado San Pedro** por un jugo fresco. Si te sientes bien, sube a **Sacsayhuamán** para el atardecer.\n\n## Día 3: El Valle Sagrado\n\nToma un colectivo o tour al Valle Sagrado. Empieza en **Pisac** por sus ruinas y mercado artesanal. Luego, dirígete a **Ollantaytambo**, un pueblo inca viviente.\n\n*Consejo de Transporte:* Los colectivos de Cusco a Pisac cuestan unos 4-6 PEN y salen de la Calle Puputi.\n\n## Día 4: Machu Picchu\n\nToma el tren temprano (PeruRail o Inca Rail) desde Ollantaytambo a Aguas Calientes. De ahí, bus a la ciudadela.\n\n**Importante:** Reserva tus entradas a Machu Picchu con semanas (o meses) de antelación. El Circuito 1 o 2 ofrece la vista clásica. Pasa 3-4 horas explorando.\n\n{GETYOURGUIDE_LINK}\n\n## Día 5: Moray y Maras\n\nVisita las terrazas agrícolas de **Moray** y las impresionantes **Salineras de Maras**. A menudo se hace como tour de medio día (aprox. 30-50 PEN).\n\n## Día 6: Montaña de 7 Colores (Vinicunca)\n\nAdvertencia: Trekking de gran altura (5.200m). Ve solo si estás aclimatado. Los tours salen a las 4 AM. Alquila un caballo si es necesario.\n\n## Día 7: Despedida o Laguna Humantay\n\nSi tienes tiempo, haz la caminata a la **Laguna Humantay**. Si no, disfruta de un último desayuno antes de ir al aeropuerto.\n\n## Próximos Pasos\n\n¿Listo para reservar? Mira nuestra guía sobre **[Dónde alojarse en Cusco]** o lee nuestra **[Guía de Presupuesto para Perú]**.",
+    "faq": [
+      {
+        "question": "¿Cuántos días necesito en Cusco?",
+        "answer": "Recomendamos al menos 5-7 días para aclimatarse y ver todo sin prisas."
+      },
+      {
+        "question": "¿Es seguro Machu Picchu para viajeras solas?",
+        "answer": "Sí, Perú es generalmente muy seguro en el circuito turístico."
+      },
+      {
+        "question": "¿Debo reservar Machu Picchu con antelación?",
+        "answer": "Absolutamente. Las entradas se agotan rápido."
+      },
+      {
+        "question": "¿Cuál es la mejor época para visitar?",
+        "answer": "La temporada seca (mayo a octubre) es ideal."
+      },
+      {
+        "question": "¿Puedo usar dólares?",
+        "answer": "Sí para hoteles y tours, pero necesitas Soles (PEN) para lo demás."
+      }
+    ],
+    "schema_org_jsonld": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cuántos días necesito en Cusco?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Recomendamos al menos 5-7 días para aclimatarse y ver todo sin prisas."
+          }
+        }
+      ]
+    },
+    "internal_links": [
+      "/es/peru/cusco-stays",
+      "/es/peru/budget-guide",
+      "/es/peru/sacred-valley-guide",
+      "/es/peru/rainbow-mountain-tips",
+      "/es/safety/altitude-sickness"
+    ],
+    "affiliate_slots": [
+      "{BOOKING_AFFILIATE_LINK}",
+      "{GETYOURGUIDE_LINK}",
+      "{VIATOR_LINK}"
+    ]
+  }
+]
