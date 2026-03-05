@@ -1,9 +1,9 @@
-import { Link, useLocation } from 'react-router-dom';
-import { Home, Map, BookOpen, Compass, Bed, User, LogIn, Globe } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
 import { clsx } from 'clsx';
-import LanguageSwitcher from './LanguageSwitcher';
+import { Bed, BookOpen, Compass, Globe, Home, Map, User } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Navbar() {
   const { t } = useTranslation();
@@ -50,6 +50,7 @@ export default function Navbar() {
           <div className="h-6 w-px bg-slate-200 mx-2" />
 
           <div className="flex items-center space-x-4">
+            <ThemeToggle />
             <LanguageSwitcher />
             {user ? (
               <Link to="/dashboard" className="flex items-center space-x-2 pl-2">

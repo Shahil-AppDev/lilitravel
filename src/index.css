@@ -13,8 +13,26 @@
 }
 
 @layer base {
+  :root {
+    --background: 248 250 252;
+    --foreground: 26 26 46;
+    --card: 255 255 255;
+    --card-foreground: 26 26 46;
+    --primary: 0 105 148;
+    --primary-foreground: 255 255 255;
+  }
+
+  .dark {
+    --background: 15 23 42;
+    --foreground: 248 250 252;
+    --card: 30 41 59;
+    --card-foreground: 248 250 252;
+    --primary: 51 135 170;
+    --primary-foreground: 255 255 255;
+  }
+
   body {
-    @apply bg-slate-50 text-night antialiased;
+    @apply bg-slate-50 dark:bg-slate-900 text-night dark:text-slate-100 antialiased transition-colors duration-300;
   }
 }
 

@@ -1,0 +1,144 @@
+name: Deploy Lili Travel to Production
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy to Hetzner Server
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Configure SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SERVER_IP: ${{ secrets.SERVER_IP }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H $SERVER_IP >> ~/.ssh/known_hosts
+
+      - name: Deploy to Server
+        env:
+          SERVER_IP: ${{ secrets.SERVER_IP }}
+        run: |
+          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no root@$SERVER_IP << 'ENDSSH'
+            set -e
+            
+            echo "🚀 Starting Lili Travel Deployment..."
+            
+            # Navigate to project directory
+            cd /opt/projects/lili-travel
+            
+            # Pull latest code
+            echo "📥 Pulling latest code from GitHub..."
+            git pull origin master || {
+              echo "⚠️  Git pull failed, attempting to clone..."
+              cd /opt/projects
+              rm -rf lili-travel
+              git clone https://github.com/Shahil-AppDev/lilitravel.git lili-travel
+              cd lili-travel
+            }
+            
+            # Deploy Backend
+            echo "🔧 Deploying Backend..."
+            cd /opt/projects/lili-travel/backend
+            npm install --production
+            
+            # Check if PM2 process exists
+            if pm2 describe lili-backend > /dev/null 2>&1; then
+              echo "♻️  Restarting lili-backend..."
+              pm2 restart lili-backend
+            else
+              echo "🆕 Starting lili-backend for the first time..."
+              pm2 start server.ts --name lili-backend --interpreter node
+            fi
+            
+            # Deploy Frontend
+            echo "🎨 Deploying Frontend..."
+            cd /opt/projects/lili-travel/frontend
+            npm install
+            npm run build
+            
+            # Check if PM2 process exists
+            if pm2 describe lili-frontend > /dev/null 2>&1; then
+              echo "♻️  Restarting lili-frontend..."
+              pm2 restart lili-frontend
+            else
+              echo "🆕 Starting lili-frontend for the first time..."
+              pm2 start server.js --name lili-frontend
+            fi
+            
+            # Save PM2 configuration
+            pm2 save
+            
+            # Show PM2 status
+            echo "📊 PM2 Process Status:"
+            pm2 list
+            
+            echo "✅ Deployment Complete!"
+            echo "Frontend: https://lili-travel.xyz"
+            echo "Backend: https://admin.lili-travel.xyz"
+          ENDSSH
+
+      - name: Verify Deployment
+        env:
+          SERVER_IP: ${{ secrets.SERVER_IP }}
+        run: |
+          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no root@$SERVER_IP << 'ENDSSH'
+            echo "🔍 Verifying deployment..."
+            
+            # Check PM2 processes
+            if pm2 describe lili-backend > /dev/null 2>&1 && pm2 describe lili-frontend > /dev/null 2>&1; then
+              echo "✅ PM2 processes running"
+            else
+              echo "❌ PM2 processes not running"
+              exit 1
+            fi
+            
+            # Check if services are responding
+            if curl -f http://localhost:5173 > /dev/null 2>&1; then
+              echo "✅ Frontend responding"
+            else
+              echo "⚠️  Frontend not responding"
+            fi
+            
+            if curl -f http://localhost:3100 > /dev/null 2>&1; then
+              echo "✅ Backend responding"
+            else
+              echo "⚠️  Backend not responding"
+            fi
+          ENDSSH
+
+      - name: Cleanup
+        if: always()
+        run: |
+          rm -f ~/.ssh/deploy_key
+
+      - name: Deployment Summary
+        if: success()
+        run: |
+          echo "🎉 Deployment Successful!"
+          echo "Frontend: https://lili-travel.xyz"
+          echo "Backend: https://admin.lili-travel.xyz"
+          echo "Timestamp: $(date)"
+
+      - name: Deployment Failed
+        if: failure()
+        run: |
+          echo "❌ Deployment Failed!"
+          echo "Check the logs above for details"
+          echo "Rollback may be required"

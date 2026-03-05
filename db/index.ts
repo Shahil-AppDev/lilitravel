@@ -1,9 +1,8 @@
+import bcrypt from 'bcryptjs';
 import Database from 'better-sqlite3';
 import path from 'path';
-import fs from 'fs';
-import bcrypt from 'bcryptjs';
 
-const dbPath = path.resolve('lili_travel.db');
+const dbPath = path.join(process.cwd(), 'lili_travel.db');
 const db = new Database(dbPath);
 
 // Enable foreign keys
@@ -103,6 +102,95 @@ export function initDb() {
       views INTEGER DEFAULT 0,
       created_at DATETIME DEFAULT CURRENT_TIMESTAMP
     );
+
+    CREATE TABLE IF NOT EXISTS planned_trips (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      slug TEXT UNIQUE NOT NULL,
+      destination TEXT NOT NULL,
+      duration INTEGER NOT NULL,
+      budget TEXT NOT NULL,
+      travel_style TEXT NOT NULL,
+      departure_city TEXT,
+      generated_plan TEXT NOT NULL,
+      map_points TEXT,
+      shares INTEGER DEFAULT 0,
+      views INTEGER DEFAULT 0,
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    );
+
+    CREATE TABLE IF NOT EXISTS properties (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      user_id INTEGER NOT NULL,
+      title TEXT NOT NULL,
+      description TEXT,
+      location TEXT NOT NULL,
+      address TEXT,
+      property_type TEXT NOT NULL,
+      bedrooms INTEGER DEFAULT 1,
+      bathrooms INTEGER DEFAULT 1,
+      max_guests INTEGER DEFAULT 2,
+      price_per_night REAL NOT NULL,
+      currency TEXT DEFAULT 'USD',
+      amenities TEXT,
+      images TEXT,
+      latitude REAL,
+      longitude REAL,
+      status TEXT DEFAULT 'active',
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+      FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+    );
+
+    CREATE TABLE IF NOT EXISTS bookings (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      property_id INTEGER NOT NULL,
+      user_id INTEGER,
+      guest_name TEXT NOT NULL,
+      guest_email TEXT NOT NULL,
+      guest_phone TEXT,
+      check_in DATE NOT NULL,
+      check_out DATE NOT NULL,
+      num_guests INTEGER NOT NULL,
+      total_price REAL NOT NULL,
+      currency TEXT DEFAULT 'USD',
+      status TEXT DEFAULT 'pending',
+      payment_status TEXT DEFAULT 'pending',
+      payment_intent_id TEXT,
+      special_requests TEXT,
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+      FOREIGN KEY (property_id) REFERENCES properties(id) ON DELETE CASCADE,
+      FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS calendar_blocks (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      property_id INTEGER NOT NULL,
+      start_date DATE NOT NULL,
+      end_date DATE NOT NULL,
+      block_type TEXT NOT NULL,
+      source TEXT,
+      booking_id INTEGER,
+      notes TEXT,
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+      FOREIGN KEY (property_id) REFERENCES properties(id) ON DELETE CASCADE,
+      FOREIGN KEY (booking_id) REFERENCES bookings(id) ON DELETE CASCADE
+    );
+
+    CREATE TABLE IF NOT EXISTS ical_sources (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      property_id INTEGER NOT NULL,
+      source_name TEXT NOT NULL,
+      source_url TEXT NOT NULL,
+      last_sync DATETIME,
+      sync_status TEXT DEFAULT 'pending',
+      sync_error TEXT,
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+      FOREIGN KEY (property_id) REFERENCES properties(id) ON DELETE CASCADE
+    );
+
+    CREATE INDEX IF NOT EXISTS idx_bookings_property ON bookings(property_id);
+    CREATE INDEX IF NOT EXISTS idx_bookings_dates ON bookings(check_in, check_out);
+    CREATE INDEX IF NOT EXISTS idx_calendar_blocks_property ON calendar_blocks(property_id);
+    CREATE INDEX IF NOT EXISTS idx_calendar_blocks_dates ON calendar_blocks(start_date, end_date);
   `;
 
   db.exec(schema);
