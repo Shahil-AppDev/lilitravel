@@ -89,10 +89,20 @@ jobs:
             # Deploy Backend
             echo ""
             echo "🔧 Deploying Backend..."
-            cd backend
+            cd /opt/projects/lili-travel
             
             # Install dependencies
-            npm ci --production
+            npm install --production
+            
+            # Create .env if not exists
+            if [ ! -f .env ]; then
+              cat > .env << 'EOFENV'
+NODE_ENV=production
+PORT=3100
+JWT_SECRET=lili-travel-production-secret-2026
+DATABASE_PATH=./lili_travel.db
+EOFENV
+            fi
             
             # Restart backend
             if pm2 describe lili-backend > /dev/null 2>&1; then
