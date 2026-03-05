@@ -126,14 +126,40 @@ EOFENV
             # Deploy Frontend
             echo ""
             echo "🎨 Deploying Frontend..."
-            cd ../frontend
-            
-            # Install dependencies
-            npm ci
+            cd /opt/projects/lili-travel
             
             # Build frontend
             echo "Building frontend..."
             npm run build
+            
+            # Create/update frontend server
+            cat > dist/server.js << 'EOFSERVER'
+const express = require('express');
+const path = require('path');
+const app = express();
+
+app.use(express.static(path.join(__dirname)));
+
+app.use((req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+const PORT = 5173;
+const server = app.listen(PORT, '0.0.0.0', () => {
+  console.log('Frontend server running on port ' + PORT);
+});
+
+server.on('error', (err) => {
+  console.error('Server error:', err);
+  process.exit(1);
+});
+EOFSERVER
+            
+            # Install express in dist if needed
+            if [ ! -d dist/node_modules ]; then
+              cd dist && npm init -y && npm install express
+              cd /opt/projects/lili-travel
+            fi
             
             # Restart frontend
             if pm2 describe lili-frontend > /dev/null 2>&1; then
@@ -141,7 +167,9 @@ EOFENV
               pm2 restart lili-frontend --update-env
             else
               echo "🆕 Starting lili-frontend..."
+              cd dist
               pm2 start server.js --name lili-frontend
+              cd /opt/projects/lili-travel
             fi
             
             # Wait for frontend to start
