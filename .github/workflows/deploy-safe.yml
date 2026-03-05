@@ -133,7 +133,7 @@ EOFENV
             npm run build
             
             # Create/update frontend server
-            cat > dist/server.js << 'EOFSERVER'
+            cat > dist/server.cjs << 'EOFSERVER'
 const express = require('express');
 const path = require('path');
 const app = express();
@@ -168,7 +168,7 @@ EOFSERVER
             else
               echo "🆕 Starting lili-frontend..."
               cd dist
-              pm2 start server.js --name lili-frontend
+              pm2 start server.cjs --name lili-frontend
               cd /opt/projects/lili-travel
             fi
             

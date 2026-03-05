@@ -85,7 +85,7 @@ EOFENV
             npm run build
             
             # Create/update frontend server
-            cat > dist/server.js << 'EOFSERVER'
+            cat > dist/server.cjs << 'EOFSERVER'
 const express = require('express');
 const path = require('path');
 const app = express();
@@ -119,7 +119,7 @@ EOFSERVER
             else
               echo "🆕 Starting lili-frontend for the first time..."
               cd /opt/projects/lili-travel/dist
-              pm2 start server.js --name lili-frontend
+              pm2 start server.cjs --name lili-frontend
             fi
             
             # Save PM2 configuration
