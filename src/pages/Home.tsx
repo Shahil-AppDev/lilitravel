@@ -6,6 +6,7 @@ import DestinationCard from '../components/DestinationCard';
 import GuideCard from '../components/GuideCard';
 import SearchBar from '../components/SearchBar';
 import Skeleton from '../components/Skeleton';
+import TikTokCarousel from '../components/social/TikTokCarousel';
 import { fetchApi } from '../lib/api';
 
 export default function Home() {
