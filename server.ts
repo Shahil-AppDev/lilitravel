@@ -8,7 +8,7 @@ import { createServer as createViteServer } from 'vite';
 import db, { initDb } from './db/index.ts';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'lili-travel-secret-key';
-const PORT = 3000;
+const PORT = parseInt(process.env.PORT || '3100', 10);
 
 // Initialize DB
 initDb();
