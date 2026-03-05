@@ -49,7 +49,7 @@ jobs:
               echo "⚠️  Git pull failed, attempting to clone..."
               cd /opt/projects
               rm -rf lili-travel
-              git clone https://github.com/Shahil-AppDev/lilitravel.git lili-travel
+              git clone https://github.com/Shahil-AppDev/lilitravel-V2.git lili-travel
               cd lili-travel
             }
             
