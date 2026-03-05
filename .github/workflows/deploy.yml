@@ -71,10 +71,10 @@ EOFENV
             # Check if PM2 process exists
             if pm2 describe lili-backend > /dev/null 2>&1; then
               echo "♻️  Restarting lili-backend..."
-              pm2 restart lili-backend
+              pm2 restart lili-backend --update-env
             else
               echo "🆕 Starting lili-backend for the first time..."
-              pm2 start server.ts --name lili-backend --interpreter node
+              pm2 start server.ts --name lili-backend --interpreter tsx
             fi
             
             # Deploy Frontend
@@ -115,10 +115,10 @@ EOFSERVER
             # Check if PM2 process exists
             if pm2 describe lili-frontend > /dev/null 2>&1; then
               echo "♻️  Restarting lili-frontend..."
-              pm2 restart lili-frontend
+              pm2 restart lili-frontend --update-env
             else
               echo "🆕 Starting lili-frontend for the first time..."
-              cd dist
+              cd /opt/projects/lili-travel/dist
               pm2 start server.js --name lili-frontend
             fi
             
